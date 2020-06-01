@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { PlayerContext } from "../contexts/PlayerContext";
+import PlayerForm from "./PlayerForm";
 
 const PlayersList = () => {
   const { isLightTheme, dark, light } = useContext(ThemeContext);
-  const { players } = useContext(PlayerContext);
+  const { players, removePlayer } = useContext(PlayerContext);
   const theme = isLightTheme ? light : dark;
   return (
     <div
@@ -14,10 +15,17 @@ const PlayersList = () => {
       <ul>
         {players.map((player) => (
           <li key={player.id} style={{ background: theme.ui }}>
-            {player.name}
+            {player.name} -{" "}
+            <span
+              onClick={() => removePlayer(player.id)}
+              style={{ cursor: "pointer", textDecoration: "underline" }}
+            >
+              Remove
+            </span>
           </li>
         ))}
       </ul>
+      <PlayerForm />
     </div>
   );
 };
