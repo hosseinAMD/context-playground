@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 const PlayersList = () => {
   const { isLightTheme, dark, light } = useContext(ThemeContext);
+  const { players } = useContext(PlayerContext);
   const theme = isLightTheme ? light : dark;
   return (
     <div
@@ -10,10 +12,11 @@ const PlayersList = () => {
       style={{ background: theme.bg, color: theme.text }}
     >
       <ul>
-        <li style={{ background: theme.ui }}>Christiano Ronaldo</li>
-        <li style={{ background: theme.ui }}>Paulo Maldini</li>
-        <li style={{ background: theme.ui }}>Andrea Pirlo</li>
-        <li style={{ background: theme.ui }}>Cludio Marchisio</li>
+        {players.map((player) => (
+          <li key={player.id} style={{ background: theme.ui }}>
+            {player.name}
+          </li>
+        ))}
       </ul>
     </div>
   );

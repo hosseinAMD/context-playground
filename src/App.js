@@ -4,6 +4,7 @@ import PlayersList from "./components/PlayersList";
 import ThemeContextProvider from "./contexts/ThemeContext";
 import ThemeToggle from "./components/ThemeToggle";
 import AuthContextProvider from "./contexts/AuthContext";
+import PlayerContextProvider from "./contexts/PlayerContext";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <ThemeContextProvider>
         <AuthContextProvider>
           <Navbar />
-          <PlayersList />
+          <PlayerContextProvider>
+            <PlayersList />
+          </PlayerContextProvider>
           <ThemeToggle />
         </AuthContextProvider>
       </ThemeContextProvider>
