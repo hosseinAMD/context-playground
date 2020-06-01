@@ -10,10 +10,27 @@ body {
 .App {
   max-width: 400px;
   margin: auto;
+}
+
+nav {
   text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  padding: 0;
 }
 
 .navbar-item {
   display: inline-block;
   margin: 0 10px;
+}
+
+.players-list {
+  padding: 20px;
+}
+
+.players-list li {
+  padding: 10px;
+  margin: 5px;
 }
