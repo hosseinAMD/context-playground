@@ -34,3 +34,13 @@ nav ul {
   padding: 10px;
   margin: 5px;
 }
+
+.rate-control-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid;
+}

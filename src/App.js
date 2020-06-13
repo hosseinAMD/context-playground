@@ -5,6 +5,8 @@ import ThemeContextProvider from "./contexts/ThemeContext";
 import ThemeToggle from "./components/ThemeToggle";
 import AuthContextProvider from "./contexts/AuthContext";
 import PlayerContextProvider from "./contexts/PlayerContext";
+import RateContextProvider from "./contexts/RateContext";
+import RateControl from "./components/RateControl";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
             <PlayersList />
           </PlayerContextProvider>
           <ThemeToggle />
+          <RateContextProvider>
+            <RateControl />
+          </RateContextProvider>
         </AuthContextProvider>
       </ThemeContextProvider>
     </div>
